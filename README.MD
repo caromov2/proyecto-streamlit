@@ -1,3 +1,8 @@
+from pathlib import Path
+
+# Texto corregido del README.md
+readme_text = """# 🌍 Traductor Multilingüe con Voz
+
 Proyecto elegido: **Traductor multilingüe con voz (voz → texto → traducción → voz)**  
 
 Para el tema de seguridad, he usado `st.secrets` de Streamlit, evitando exponer las claves en el código fuente.
@@ -116,7 +121,15 @@ En esta sección enviamos el texto transcrito al servicio de traducción.
 ---
 
 ### — TTS —
-En esta sección enviamos el texto traducido para generar un audio en el idioma seleccionado.
 
-```python
-ssml = f\"\"\"...\"\"\"
+Aqui en esta seccion queremos enviar el texto traducido para crear un audio con el idioma seleccionado.
+
+ssml = f"""...""": Crea el Speech Synthesis Markup Language (SSML). El SSML es un formato XML que instruye al servicio de TTS sobre cómo debe generarse la voz.
+
+    <speak version='1.0' xml:lang='{codigo_destino}'>: Define el idioma base para la síntesis, utilizando el código del idioma destino.
+
+    <voice name='{voz_destino}'>{texto_tradu}</voice>: Especifica la voz a utilizar (voz_destino) y encierra el texto a leer (texto_tradu).
+
+En el headers_tts enviamos la key el ssml y el formato del audio que es MP3, mono, 16kHz, 128kbps.
+
+enviamos el post en tts_resp y comprovamos el status_code si es igual a 200 sacamos el audio y sinos sacamos el error  
