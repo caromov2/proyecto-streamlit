@@ -1,8 +1,3 @@
-from pathlib import Path
-
-# Texto corregido del README.md
-readme_text = """# 🌍 Traductor Multilingüe con Voz
-
 Proyecto elegido: **Traductor multilingüe con voz (voz → texto → traducción → voz)**  
 
 Para el tema de seguridad, he usado `st.secrets` de Streamlit, evitando exponer las claves en el código fuente.
