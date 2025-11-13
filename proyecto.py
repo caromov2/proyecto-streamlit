@@ -60,9 +60,12 @@ audio_data = None
 if uploaded:
     audio_data = uploaded.getbuffer().tobytes()
     st.success(f"Archivo cargado: {uploaded.name}")
+    st.audio(audio_data,format="audio/wav")
 elif grabacion_data and grabacion_data.get("bytes"):
     audio_data = grabacion_data["bytes"]
     st.success("Grabación completada ✅")
+    st.audio(audio_data,format="audio/wav")
+
 
 # --- STT ---
 if audio_data:
